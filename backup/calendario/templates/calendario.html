@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Calendario</title>
+{% endblock %}
+
+{% block corpo %}
+
+<!-- <h1>Calendário de Atividades</h1>-->
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <a href="?month={{ anterior_mes }}&year={{ ano }}" class="btn btn-outline-success btn-sm">Anterior</a>
+    <a href="?month={{ proximo_mes }}&year={{ ano }}" class="btn btn-outline-success btn-sm">Proximo</a>
+    <h2>{{ mes_atual }} de {{ ano_atual }}</h2>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for semana in cal %}
+        <tr>
+            {% for dia in semana %}
+            {% if dia == 0 %}
+            <td></td>
+            {% else %}
+            <td>
+                {{ dia }}
+                <div class="atividade-count">
+                    {% for atividade in eventos %}
+                    {% if atividade.data.day == dia %}
+                    <li>{{ atividade.titulo }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<!-- <a href="?month={{ anterior_mes }}&year={{ ano }}">Mês Anterior</a>
+    <a href="?month={{ proximo_mes }}&year={{ ano }}">Próximo Mês</a>-->
+
+{% endblock %}

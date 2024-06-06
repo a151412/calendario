@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 ">
+        <h1>Pagina Inicial</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-2 pb-2 ">
+        <a href="/adicionar" class="btn btn-success">Adicionar</a>
+        <a href="/listar" class="btn btn-success">Listar</a>
+    </div>
+    {% load static %}
+    <script src="{% static 'javascript.js' %}">
+    </script>
+</body>
+
+</html>

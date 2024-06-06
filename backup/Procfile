@@ -1,0 +1,1 @@
+web: gunicorn planejamento.wsgi --log-file -
